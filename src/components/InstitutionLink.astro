@@ -1,0 +1,5 @@
+---
+const { institution } = Astro.props;
+---
+
+<span>{institution && institution.data ? <span class="inst">{ institution.data && institution.data.contact && institution.data.contact.url ? <a href={institution.data.contact.url}>{institution.data.name}</a> : institution.data.name}</span> : null} • </span>

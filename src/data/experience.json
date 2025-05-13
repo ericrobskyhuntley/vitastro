@@ -1,0 +1,31 @@
+[
+    {
+        "id": "mit-lec",
+        "name": "Lecturer in Urban Science and Planning",
+        "startDate": "2019-08-01",
+        "institution": "dusp"
+    }, {
+        "id": "og",
+        "name": "Founder & Principal",
+        "startDate": "2023-10-04",
+        "institution": "og"
+    }, {
+        "id": "mit-ti",
+        "name": "Technical Instructor of GIS, Data Visualization, and Graphics",
+        "startDate": "2017-08-01",
+        "endDate": "2019-07-31",
+        "institution": "mit"
+    }, {
+        "id": "hvd",
+        "name": "Lecturer in Landscape Architecture",
+        "startDate": "2021-01-15",
+        "endDate": "2023-05-31",
+        "institution": "gsd"
+    }, {
+        "id": "gsapp",
+        "name": "Adjunct Assistant Professor of Architecture, Planning, and Preservation",
+        "startDate": "2021-06-01",
+        "endDate": "2021-08-15",
+        "institution": "gsapp"
+    }
+]

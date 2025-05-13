@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from 'astro:content';
+
+import InstitutionLink from './InstitutionLink.astro'
+
+type Institution = CollectionEntry<"institutions">
+
+interface Props {
+    institution: Institution;
+}
+
+const { institution } = Astro.props;
+
+const parent = institution.data && institution.data.parent ? await getEntry('institutions', institution.data.parent) : undefined;
+
+const p: Institution | null = parent ?? null;
+---
+
+<InstitutionLink {institution}/> { p ? <InstitutionLink institution={p}/>: null}

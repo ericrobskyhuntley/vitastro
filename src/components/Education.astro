@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry, ReferenceDataEntry } from "astro:content";
+import { getEntry, getEntries } from "astro:content";
+
+import Section from './Section.astro';
+import Degree from './Degree.astro';
+
+type Vita = CollectionEntry<"vita">
+type Person = CollectionEntry<"people">
+type Education = CollectionEntry<"education">
+
+interface Props {
+    vita: Vita;
+    heading: string;
+}
+
+const { vita, heading } = Astro.props;
+
+const person: Person = await getEntry(vita.data.person);
+const refs = person.data.education as ReferenceDataEntry<"education", string>[];
+const education: Education[] = await getEntries(refs);
+
+---
+<Section name={heading} classes="is-size-5 has-text-weight-bold">
+    {
+        education.map((degree) => <Degree {degree}/>)
+    }
+</Section>

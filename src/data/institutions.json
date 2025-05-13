@@ -1,0 +1,181 @@
+[
+    {
+        "id": "hhs",
+        "name": "Heritage High School",
+        "contact": {
+            "address": {
+                "id": "3465-n-center",
+                "address": "3465 N Center Rd",
+                "muni": "Saginaw", 
+                "state": "MI",
+                "postal": "48603",
+                "country": "USA"
+            }
+        }
+    }, {
+        "id": "uk",
+        "name": "University of Kentucky",
+        "contact": {
+            "address": {
+                "address": "817 Patterson Office Tower",
+                "muni": "Lexington", 
+                "state": "KY",
+                "postal": "40506",
+                "country": "USA"
+            },
+            "url": "https://www.uky.edu/"
+        }
+    }, {
+        "id": "ukg",
+        "name": "Department of Geography",
+        "parent": "uk",
+        "contact": {
+            "address": {
+                "address": "817 Patterson Office Tower",
+                "muni": "Lexington", 
+                "state": "KY",
+                "postal": "40506",
+                "country": "USA"
+            },
+            "url": "https://geography.as.uky.edu/"
+        }
+    }, {
+        "id": "um",
+        "name": "University of Michigan",
+        "contact": {
+            "address": {
+                "address": "2000 Bonisteel Blvd",
+                "muni": "Ann Arbor", 
+                "state": "MI",
+                "postal": "48109",
+                "country": "USA"
+            },
+            "url": "https://www.umich.edu/"
+        }
+    }, {
+        "id": "tcaup",
+        "name": "Taubman College of Architecture and Urban Planning",
+        "parent": "um",
+        "contact": {
+            "address": {
+                "address": "2000 Bonisteel Blvd",
+                "muni": "Ann Arbor", 
+                "state": "MI",
+                "postal": "48109",
+                "country": "USA"
+            },
+            "url": "https://taubmancollege.umich.edu/"
+        }
+    }, {
+        "id": "smtd",
+        "name": "School of Music, Theater, and Dance",
+        "parent": "um",
+        "contact": {
+            "address": {
+                "address": "2000 Bonisteel Blvd",
+                "muni": "Ann Arbor", 
+                "state": "MI",
+                "postal": "48109",
+                "country": "USA"
+            },
+            "url": "https://smtd.umich.edu/"
+        }
+    }, {
+        "id": "mit",
+        "name": "Massachusetts Institute of Technology",
+        "contact": {
+            "address": {
+                "address": "77 Massachusetts Ave",
+                "muni": "Cambridge", 
+                "state": "MA",
+                "postal": "02139",
+                "country": "USA"
+            },
+            "email": "ehuntley@mit.edu",
+            "url": "https://www.mit.edu/"
+        }
+    }, {
+        "id": "dusp",
+        "name": "Department of Urban Studies and Planning",
+        "parent": "mit",
+        "contact": {
+            "address": {
+                "address": "77 Massachusetts Ave",
+                "muni": "Cambridge", 
+                "state": "MA",
+                "postal": "02139",
+                "country": "USA"
+            },
+            "email": "ehuntley@mit.edu",
+            "url": "https://dusp.mit.edu/"
+        }
+    }, {
+        "id": "og",
+        "name": "OGRAPHIES Research & Design",
+        "contact": {
+            "address": {
+                "address": "1953 Massachusetts Ave",
+                "unit": "#400123",
+                "muni": "Cambridge", 
+                "state": "MA",
+                "postal": "02140",
+                "country": "USA"
+            },
+            "url": "https://ographiesresearch.github.io/"
+        }
+    }, {
+        "id": "hvd",
+        "name": "Harvard University",
+        "contact": {
+            "address": {
+                "address": "1350 Massachusetts Ave",
+                "muni": "Cambridge", 
+                "state": "MA",
+                "postal": "02138",
+                "country": "USA"
+            },
+            "url": "https://www.harvard.edu/"
+        }
+    }, {
+        "id": "gsd",
+        "name": "Graduate School of Design",
+        "parent": "hvd",
+        "contact": {
+            "address": {
+                "address": "1350 Massachusetts Ave",
+                "muni": "Cambridge", 
+                "state": "MA",
+                "postal": "02138",
+                "country": "USA"
+            },
+            "url": "https://www.gsd.harvard.edu/"
+        }
+    }, {
+        "id": "columbia",
+        "name": "Columbia University",
+        "contact": {
+            "address": {
+                "address": "1350 Massachusetts Ave",
+                "muni": "Cambridge", 
+                "state": "MA",
+                "postal": "02138",
+                "country": "USA"
+            },
+            "url": "https://www.columbia.edu/"
+        }
+    }, {
+        "id": "gsapp",
+        "name": "Graduate School of Architecture, Planning, and Preservation",
+        "parent": "columbia",
+        "contact": {
+            "address": {
+                "address": "1172 Amsterdam Ave",
+                "muni": "New York", 
+                "state": "NY",
+                "postal": "10027",
+                "country": "USA"
+            },
+            "url": "https://www.arch.columbia.edu/"
+        }
+    }
+]

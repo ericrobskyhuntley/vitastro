@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry, z } from "astro:content";
+import { getEntry } from 'astro:content';
+
+import Row from './Row.astro';
+import Yearrange from './Yearrange.astro';
+import Citystate from './Citystate.astro';
+import Institution from './Institution.astro';
+import Thesis from './Thesis.astro';
+
+import { contactType } from '../content.config.ts';
+type Contact = z.infer<typeof contactType> | undefined;
+type Education = CollectionEntry<"education">
+type Inst = CollectionEntry<"institutions">
+type ThesisType = CollectionEntry<"theses">
+
+interface Props {
+    degree: Education
+}
+
+const { degree } = Astro.props;
+
+const institution: Inst = await getEntry(degree.data.institution);
+
+const contact: Contact = institution.data.contact;
+
+const thesis: ThesisType | null = degree?.data.thesis ? await getEntry(degree.data.thesis) : null;
+
+---
+
+<Row>
+    <Yearrange start={degree.data.startDate} end={degree.data.endDate} slot="left"/>
+    <ul slot="right">
+        <li class="has-text-weight-bold">{degree.data.short}, {degree.data.subject}</li>
+        <li><Institution {institution}/><Citystate address={contact && contact.address ? contact.address : null}/></span></li>
+        <Thesis {thesis} />
+    </ul>
+</Row>

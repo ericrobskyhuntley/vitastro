@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEntry, z } from 'astro:content';
+import { contactType } from '../content.config.ts';
+
+import Section from './Section.astro';
+
+type Vita = CollectionEntry<"vita">
+type Person = CollectionEntry<"people">
+type Experience = CollectionEntry<"experience">
+type Institution = CollectionEntry<"institutions">
+
+interface Props {
+    vita: Vita;
+}
+
+const { vita } = Astro.props;
+
+type Contact = z.infer<typeof contactType> | undefined;
+const person: Person = await getEntry(vita.data.person);
+const primary: Experience | null = await getEntry(vita.data.primary);
+const inst: Institution = await getEntry(primary.data.institution);
+const contact: Contact | null = inst.data.contact;
+---
+
+<Section name={person.data.name} classes="title is-3">
+    <div class="columns">
+        <div class="column is-offset-one-fifth is-four-fifths">
+            <div class="columns">
+                <div class="column">
+                    <ul>
+                        <li>{primary.data.name}</li>
+                        <li>{inst.data.name}</li>
+                        {contact && contact.address ? <li>{contact.address.address}</li> : null}
+                        {contact && contact.address ? <li>{contact.address.muni}, {contact.address.state} {contact.address.postal}</li> : null}
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        {contact && contact.email ? <li>{contact.email}</li> : null}
+                        {contact && contact.url ? <li>{contact.url}</li> : null}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</Section>
+
+
+
+<style>
+    .split {
+        width: 50%;
+    }
+</style>

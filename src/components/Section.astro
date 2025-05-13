@@ -1,0 +1,8 @@
+---
+const { vita, name, classes = "" }  = Astro.props;
+---
+
+<div class="block">
+    <div class={classes}>{name}</div>
+    <slot/>
+</div>

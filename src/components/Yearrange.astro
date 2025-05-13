@@ -1,0 +1,10 @@
+---
+const { start, end } = Astro.props;
+
+const startYear: number = parseInt(start)
+const endYear: number | string = end ? parseInt(end) : "Present"
+
+const range = startYear == endYear ? startYear : `${startYear} – ${endYear}`;
+---
+
+<span>{range}</span>

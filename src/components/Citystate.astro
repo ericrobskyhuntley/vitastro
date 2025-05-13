@@ -1,0 +1,16 @@
+---
+import type { z } from "astro:content";
+import { addressType } from '../content.config.ts';
+
+type Address = z.infer<typeof addressType> | undefined;
+
+interface Props {
+    address: Address | null
+}
+
+const { address } = Astro.props;
+---
+{
+    address && 
+    <span class="citystate">{address.muni}, {address.state}, {address.country}</span>
+}

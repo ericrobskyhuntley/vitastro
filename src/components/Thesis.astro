@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry, z } from "astro:content";
+import { getEntry, getEntries } from 'astro:content';
+
+import DOI from './DOI.astro';
+
+type Thesis = CollectionEntry<"theses">
+type Person = CollectionEntry<"people">
+
+interface Props {
+    thesis: Thesis | null;
+}
+const { thesis } = Astro.props;
+
+const chair: Person | null = thesis?.data.chair ? await getEntry(thesis.data.chair) : null;
+const committee: Person[] | null = thesis?.data.committee ? await getEntries(thesis.data.committee) : null;
+
+---
+
+{thesis ? <li class="thesis"><span class="t-title">{thesis.data.name}</span>. <DOI doi={thesis.data.doi}/></li> : null}
+{chair ? <li>{chair.data.name} (chair), {committee ? committee.map(member => member.data.name).join(', ') : null}</li> : null}
+
+<style>
+    span.t-title {
+        font-style: italic;
+    }
+    .thesis {
+        margin-top: 0.5rem;
+    }
+</style>

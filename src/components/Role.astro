@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry, z } from "astro:content";
+import { getEntry } from 'astro:content';
+
+import Row from './Row.astro';
+import Yearrange from './Yearrange.astro';
+import Institution from './Institution.astro';
+import Citystate from './Citystate.astro';
+
+import { contactType } from '../content.config.ts';
+type Role = CollectionEntry<"experience">;
+type Inst = CollectionEntry<"institutions">;
+type Contact = z.infer<typeof contactType> | undefined;
+
+interface Props {
+    role: Role;
+}
+
+const { role } = Astro.props;
+
+const institution: Inst = await getEntry(role.data.institution);
+const contact: Contact = institution.data.contact;
+---
+<Row>
+    <Yearrange start={role.data.startDate} end={role.data.endDate} slot="left"/>
+    <ul slot="right">
+        <li class="has-text-weight-bold">{role.data.name}</li>
+        <li><Institution {institution} /><Citystate address={contact && contact.address ? contact.address : null}/></li>
+    </ul>
+</Row>
