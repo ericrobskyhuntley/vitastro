@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry, ReferenceDataEntry } from "astro:content";
+import { getEntry, getEntries, getCollection } from "astro:content";
+
+import Section from './Section.astro';
+import ThesisAdvised from './ThesisAdvised.astro';
+
+type Vita = CollectionEntry<"vita">
+type Person = CollectionEntry<"people">
+type Theses = CollectionEntry<"theses">
+
+interface Props {
+    vita: Vita;
+    heading: string;
+}
+
+const { vita, heading } = Astro.props;
+
+const person: Person = await getEntry(vita.data.person);
+
+const theses: Theses[] = await getCollection('theses', ({ data }) => {
+  return data.chair.id == person.id
+});
+
+---
+<Section name={heading} classes="is-size-5 has-text-weight-bold">
+    {
+        theses.map((thesis) => <ThesisAdvised {thesis}/>)
+    }
+</Section>

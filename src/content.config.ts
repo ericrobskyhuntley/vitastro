@@ -1,5 +1,5 @@
 import { defineCollection, reference, z } from 'astro:content';
-import { file } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
 
 const vita = defineCollection({
     loader: file("src/data/_vita.json"),
@@ -10,10 +10,11 @@ const vita = defineCollection({
 });
 
 const theses = defineCollection({
-    loader: file("src/data/theses.json"),
+    loader: glob({ pattern: "**/*.json", base: "./src/data/theses" }),
     schema: z.object({
-        name: z.string(),
-        doi: z.string(),
+        title: z.string(),
+        subtitle: z.string().optional(),
+        doi: z.string().optional(),
         chair: reference('people'),
         committee: z.array(reference('people')).optional()
     })

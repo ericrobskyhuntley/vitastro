@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import Header from '../components/Header.astro'
 import Education from '../components/Education.astro'
 import Experience from '../components/Experience.astro'
+import Advising from '../components/Advising.astro'
 
 type Vita = CollectionEntry<"vita">
 
@@ -47,7 +48,7 @@ const vita = vitaCollect[0]
 		<Header {vita} />
 		<Experience {vita} heading="Experience"/>
 		<Education {vita} heading="Education"/>
-		<!-- <Roles {vita}/> -->
+		<Advising {vita} heading="Advising"/>
 		<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
 	</body>
 </html>

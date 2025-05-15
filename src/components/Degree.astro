@@ -33,6 +33,6 @@ const thesis: ThesisType | null = degree?.data.thesis ? await getEntry(degree.da
     <ul slot="right">
         <li class="has-text-weight-bold">{degree.data.short}, {degree.data.subject}</li>
         <li><Institution {institution}/><Citystate address={contact && contact.address ? contact.address : null}/></span></li>
-        <Thesis {thesis} />
+        {thesis && <Thesis {thesis} /> }
     </ul>
 </Row>
