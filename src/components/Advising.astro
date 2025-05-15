@@ -18,13 +18,20 @@ const { vita, heading } = Astro.props;
 
 const person: Person = await getEntry(vita.data.person);
 
-const theses: Theses[] = await getCollection('theses', ({ data }) => {
+const asAdvisor: Theses[] = await getCollection('theses', ({ data }) => {
   return data.chair.id == person.id
+});
+
+const asCommittee: Theses[] = await getCollection('theses', ({ data }) => {
+  return data.committee ? data.committee.some(member => member.id === person.id) : null;
 });
 
 ---
 <Section name={heading} classes="is-size-5 has-text-weight-bold">
     {
-        theses.map((thesis) => <ThesisAdvised {thesis}/>)
+        asAdvisor.map((thesis) => <ThesisAdvised {thesis}/>)
+    }
+    {
+        asCommittee.map((thesis) => <ThesisAdvised {thesis}/>)
     }
 </Section>
