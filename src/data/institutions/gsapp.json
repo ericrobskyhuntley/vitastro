@@ -1,0 +1,14 @@
+{
+    "name": "Graduate School of Architecture, Planning, and Preservation",
+    "parent": "columbia",
+    "contact": {
+        "address": {
+            "address": "1172 Amsterdam Ave",
+            "muni": "New York", 
+            "state": "NY",
+            "postal": "10027",
+            "country": "USA"
+        },
+        "url": "https://www.arch.columbia.edu/"
+    }
+}

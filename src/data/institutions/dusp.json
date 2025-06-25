@@ -1,0 +1,15 @@
+{
+    "name": "Department of Urban Studies and Planning",
+    "parent": "mit",
+    "contact": {
+        "address": {
+            "address": "77 Massachusetts Ave",
+            "muni": "Cambridge", 
+            "state": "MA",
+            "postal": "02139",
+            "country": "USA"
+        },
+        "email": "ehuntley@mit.edu",
+        "url": "https://dusp.mit.edu/"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Harvard University",
+    "contact": {
+        "address": {
+            "address": "1350 Massachusetts Ave",
+            "muni": "Cambridge", 
+            "state": "MA",
+            "postal": "02138",
+            "country": "USA"
+        },
+        "url": "https://www.harvard.edu/"
+    }
+}

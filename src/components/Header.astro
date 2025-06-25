@@ -1,14 +1,11 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { getEntry, z } from 'astro:content';
-import { contactType } from '../content.config.ts';
+import { getEntry } from "astro:content";
+import type { Contact, Experience } from "../content.config.ts";
 
-import Section from './Section.astro';
+import Section from "./Section.astro";
 
-type Vita = CollectionEntry<"vita">
-type Person = CollectionEntry<"people">
-type Experience = CollectionEntry<"experience">
-type Institution = CollectionEntry<"institutions">
+type Vita = CollectionEntry<"vita">;
 
 interface Props {
     vita: Vita;
@@ -16,28 +13,50 @@ interface Props {
 
 const { vita } = Astro.props;
 
-type Contact = z.infer<typeof contactType> | undefined;
+type Person = CollectionEntry<"people">;
+type Institution = CollectionEntry<"institutions">;
+
 const person: Person = await getEntry(vita.data.person);
-const primary: Experience | null = await getEntry(vita.data.primary);
-const inst: Institution = await getEntry(primary.data.institution);
+const primary: Experience = person.data.experience[0];
+const inst: Institution = await getEntry(primary.institution);
 const contact: Contact | null = inst.data.contact;
+
+const title = person.data.creds
+    ? [person.data.name, person.data.creds.join(", ")].join(", ")
+    : person.data.name;
 ---
 
-<Section name={person.data.name} classes="title is-3">
+<Section name={title} classes="title is-3">
     <div class="columns">
         <div class="column is-offset-one-fifth is-four-fifths">
             <div class="columns">
                 <div class="column">
                     <ul>
-                        <li>{primary.data.name}</li>
+                        <li>{primary.name}</li>
                         <li>{inst.data.name}</li>
-                        {contact && contact.address ? <li>{contact.address.address}</li> : null}
-                        {contact && contact.address ? <li>{contact.address.muni}, {contact.address.state} {contact.address.postal}</li> : null}
+                        {
+                            contact && contact.address ? (
+                                <li>{contact.address.address}</li>
+                            ) : null
+                        }
+                        {
+                            contact && contact.address ? (
+                                <li>
+                                    {contact.address.muni},{" "}
+                                    {contact.address.state}{" "}
+                                    {contact.address.postal}
+                                </li>
+                            ) : null
+                        }
                     </ul>
                 </div>
                 <div class="column">
                     <ul>
-                        {contact && contact.email ? <li>{contact.email}</li> : null}
+                        {
+                            contact && contact.email ? (
+                                <li>{contact.email}</li>
+                            ) : null
+                        }
                         {contact && contact.url ? <li>{contact.url}</li> : null}
                     </ul>
                 </div>
@@ -45,8 +64,6 @@ const contact: Contact | null = inst.data.contact;
         </div>
     </div>
 </Section>
-
-
 
 <style>
     .split {

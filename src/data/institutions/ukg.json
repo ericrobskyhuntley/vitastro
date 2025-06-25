@@ -1,0 +1,14 @@
+{
+    "name": "Department of Geography",
+    "parent": "uk",
+    "contact": {
+        "address": {
+            "address": "817 Patterson Office Tower",
+            "muni": "Lexington", 
+            "state": "KY",
+            "postal": "40506",
+            "country": "USA"
+        },
+        "url": "https://geography.as.uky.edu/"
+    }
+}

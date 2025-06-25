@@ -1,0 +1,14 @@
+{
+    "name": "Graduate School of Design",
+    "parent": "hvd",
+    "contact": {
+        "address": {
+            "address": "1350 Massachusetts Ave",
+            "muni": "Cambridge", 
+            "state": "MA",
+            "postal": "02138",
+            "country": "USA"
+        },
+        "url": "https://www.gsd.harvard.edu/"
+    }
+}

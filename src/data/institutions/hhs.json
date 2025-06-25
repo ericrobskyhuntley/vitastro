@@ -1,0 +1,12 @@
+{
+    "name": "Heritage High School",
+    "contact": {
+        "address": {
+            "address": "3465 N Center Rd",
+            "muni": "Saginaw", 
+            "state": "MI",
+            "postal": "48603",
+            "country": "USA"
+        }
+    }
+}

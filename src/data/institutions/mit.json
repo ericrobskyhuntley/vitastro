@@ -1,0 +1,14 @@
+{
+    "name": "Massachusetts Institute of Technology",
+    "contact": {
+        "address": {
+            "address": "77 Massachusetts Ave",
+            "muni": "Cambridge", 
+            "state": "MA",
+            "postal": "02139",
+            "country": "USA"
+        },
+        "email": "ehuntley@mit.edu",
+        "url": "https://www.mit.edu/"
+    }
+}

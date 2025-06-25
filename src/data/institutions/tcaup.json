@@ -1,0 +1,14 @@
+{
+    "name": "Taubman College of Architecture and Urban Planning",
+    "parent": "um",
+    "contact": {
+        "address": {
+            "address": "2000 Bonisteel Blvd",
+            "muni": "Ann Arbor", 
+            "state": "MI",
+            "postal": "48109",
+            "country": "USA"
+        },
+        "url": "https://taubmancollege.umich.edu/"
+    }
+}

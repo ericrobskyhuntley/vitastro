@@ -1,5 +1,6 @@
 ---
-import type { CollectionEntry, z } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import type { Contact, Education } from "../content.config.ts";
 import { getEntry } from 'astro:content';
 
 import Row from './Row.astro';
@@ -8,9 +9,6 @@ import Citystate from './Citystate.astro';
 import Institution from './Institution.astro';
 import Thesis from './Thesis.astro';
 
-import { contactType } from '../content.config.ts';
-type Contact = z.infer<typeof contactType> | undefined;
-type Education = CollectionEntry<"education">
 type Inst = CollectionEntry<"institutions">
 type ThesisType = CollectionEntry<"theses">
 
@@ -20,18 +18,18 @@ interface Props {
 
 const { degree } = Astro.props;
 
-const institution: Inst = await getEntry(degree.data.institution);
+const institution: Inst = await getEntry(degree.institution);
 
 const contact: Contact = institution.data.contact;
 
-const thesis: ThesisType | null = degree?.data.thesis ? await getEntry(degree.data.thesis) : null;
+const thesis: ThesisType | null = degree?.thesis ? await getEntry(degree.thesis) : null;
 
 ---
 
 <Row>
-    <Yearrange start={degree.data.startDate} end={degree.data.endDate} slot="left"/>
+    <Yearrange start={degree.startDate} end={degree.endDate} slot="left"/>
     <ul slot="right">
-        <li class="has-text-weight-bold">{degree.data.short}, {degree.data.subject}</li>
+        <li class="has-text-weight-bold">{degree.short}, {degree.subject}</li>
         <li><Institution {institution}/><Citystate address={contact && contact.address ? contact.address : null}/></span></li>
         {thesis && <Thesis {thesis} /> }
     </ul>

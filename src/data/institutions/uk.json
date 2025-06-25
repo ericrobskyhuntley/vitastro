@@ -1,0 +1,13 @@
+{
+    "name": "University of Kentucky",
+    "contact": {
+        "address": {
+            "address": "817 Patterson Office Tower",
+            "muni": "Lexington", 
+            "state": "KY",
+            "postal": "40506",
+            "country": "USA"
+        },
+        "url": "https://www.uky.edu/"
+    }
+}

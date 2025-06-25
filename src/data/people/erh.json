@@ -1,0 +1,89 @@
+{
+    "name": "Eric Robsky Huntley",
+    "creds": [
+        "PhD",
+        "GISP"
+    ],
+    "contact": {
+        "url": "https://ericrobskyhuntley.github.io/",
+        "profiles": [
+            {
+                "network": "github",
+                "username": "ericrobskyhuntley",
+                "url": "https://github.com/ericrobskyhuntley"
+            },
+            {
+                "network": "orcid",
+                "username": "0000-0001-8497-0589",
+                "url": "https://orcid.org/0000-0001-8497-0589"
+            },
+            {
+                "network": "zenodo",
+                "url": "https://zenodo.org/search?q=metadata.creators.person_or_org.name:%22Huntley,+Eric+Robsky%22"
+            }
+        ]
+    },
+    "education": [
+        {
+            "name": "Doctor of Philosophy",
+            "short": "PhD",
+            "subject": "Geography",
+            "startDate": "2014-08-27",
+            "endDate": "2020-05-09",
+            "institution": "ukg",
+            "thesis": "erh-phd"
+        },
+        {
+            "name": "Master of Urban Planning",
+            "short": "MUP",
+            "subject": "Urban and Regional Planning",
+            "startDate": "2012-09-04",
+            "endDate": "2014-05-02",
+            "institution": "tcaup"
+        },
+        {
+            "name": "Bachelor of Fine Arts",
+            "short": "BFA",
+            "subject": "Performing Arts Technology",
+            "startDate": "2006-09-05",
+            "endDate": "2010-12-19",
+            "institution": "smtd"
+        }
+    ],
+    "experience": [
+        {
+            "name": "Lecturer in Urban Science and Planning",
+            "startDate": "2019-08-01",
+            "institution": "dusp"
+        },
+        {
+            "name": "Founder & Principal",
+            "startDate": "2023-10-04",
+            "institution": "og"
+        },
+        {
+            "name": "Technical Instructor of GIS, Data Visualization, and Graphics",
+            "startDate": "2017-08-01",
+            "endDate": "2019-07-31",
+            "institution": "dusp"
+        },
+        {
+            "name": "Lecturer in Landscape Architecture",
+            "startDate": "2021-01-15",
+            "endDate": "2023-05-31",
+            "institution": "gsd"
+        },
+        {
+            "name": "Adjunct Assistant Professor of Architecture, Planning, and Preservation",
+            "startDate": "2021-06-01",
+            "endDate": "2021-08-15",
+            "institution": "gsapp"
+        },
+        {
+            "name": "Instructor of Record",
+            "startDate": "2015-08-15",
+            "endDate": "2017-05-13",
+            "institution": "ukg"
+        }
+    ]
+}

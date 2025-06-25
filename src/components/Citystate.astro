@@ -1,11 +1,8 @@
 ---
-import type { z } from "astro:content";
-import { addressType } from '../content.config.ts';
-
-type Address = z.infer<typeof addressType> | undefined;
+import type { Address } from '../content.config.ts';
 
 interface Props {
-    address: Address | null
+    address: Address
 }
 
 const { address } = Astro.props;

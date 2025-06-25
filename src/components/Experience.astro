@@ -1,13 +1,14 @@
 ---
-import type { CollectionEntry, ReferenceDataEntry } from "astro:content";
-import { getEntry, getEntries } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import type { Experience } from "../content.config.ts";
+
+import { getEntry } from "astro:content";
 
 import Section from './Section.astro';
 import Role from './Role.astro';
 
 type Vita = CollectionEntry<"vita">
 type Person = CollectionEntry<"people">
-type Experience = CollectionEntry<"experience">
 
 interface Props {
     vita: Vita;
@@ -17,11 +18,10 @@ interface Props {
 const { vita, heading } = Astro.props;
 
 const person: Person = await getEntry(vita.data.person);
-const refs = person.data.experience as ReferenceDataEntry<"experience", string>[];
-const experience: Experience[] = await getEntries(refs);
+const roles = person.data.experience as Experience[];
 ---
 <Section name={heading} classes="is-size-5 has-text-weight-bold">
     {
-        experience.map((role) => <Role {role}/>)
+        roles.map((role) => <Role {role}/>)
     }
 </Section>

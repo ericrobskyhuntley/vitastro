@@ -1,0 +1,14 @@
+{
+    "name": "School of Music, Theater, and Dance",
+    "parent": "um",
+    "contact": {
+        "address": {
+            "address": "2000 Bonisteel Blvd",
+            "muni": "Ann Arbor", 
+            "state": "MI",
+            "postal": "48109",
+            "country": "USA"
+        },
+        "url": "https://smtd.umich.edu/"
+    }
+}
