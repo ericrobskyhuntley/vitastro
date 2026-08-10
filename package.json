@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.10",
+    "astro": "^7.1.1",
     "bulma": "^1.0.4",
     "pagedjs": "^0.4.3"
   }
